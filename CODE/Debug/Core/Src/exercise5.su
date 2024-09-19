@@ -1,0 +1,16 @@
+exercise5.c:22:6:init_exercise5	8	static
+exercise5.c:32:6:led_green_15_off	8	static
+exercise5.c:35:6:led_green_15_on	8	static
+exercise5.c:38:6:led_yellow_15_off	8	static
+exercise5.c:41:6:led_yellow_15_on	8	static
+exercise5.c:44:6:led_red_15_off	8	static
+exercise5.c:47:6:led_red_15_on	8	static
+exercise5.c:51:6:led_green_25_off	8	static
+exercise5.c:54:6:led_green_25_on	8	static
+exercise5.c:57:6:led_yellow_25_off	8	static
+exercise5.c:60:6:led_yellow_25_on	8	static
+exercise5.c:63:6:led_red_25_off	8	static
+exercise5.c:66:6:led_red_25_on	8	static
+exercise5.c:69:6:LEDA	16	static
+exercise5.c:130:6:LEDB	16	static
+exercise5.c:191:6:exercise5_run	8	static

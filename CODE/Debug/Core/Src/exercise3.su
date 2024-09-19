@@ -1,0 +1,14 @@
+exercise3.c:23:6:init_exercise3	8	static
+exercise3.c:33:6:led_green_1_off	8	static
+exercise3.c:36:6:led_green_1_on	8	static
+exercise3.c:39:6:led_yellow_1_off	8	static
+exercise3.c:42:6:led_yellow_1_on	8	static
+exercise3.c:45:6:led_red_1_off	8	static
+exercise3.c:48:6:led_red_1_on	8	static
+exercise3.c:52:6:led_green_2_off	8	static
+exercise3.c:55:6:led_green_2_on	8	static
+exercise3.c:58:6:led_yellow_2_off	8	static
+exercise3.c:61:6:led_yellow_2_on	8	static
+exercise3.c:64:6:led_red_2_off	8	static
+exercise3.c:67:6:led_red_2_on	8	static
+exercise3.c:71:6:exercise3_run	8	static

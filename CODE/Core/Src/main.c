@@ -22,7 +22,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "exercise1.h"
+//#include "exercise1.h"
+//#include "exercise2.h"
+//#include "exercise3.h"
+//#include "exercise4.h"
+//#include "exercise5.h"
+#include "exercise10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,10 +96,22 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  init_exercise1();
+  //init_exercise1();
+  //init_exercise2();
+  //init_exercise3();
+  //init_exercise4();
+  //int counter = 0;
+  //init_exercise5();
+  init_exercise10();
   while (1)
   {
-	  exercise1_run();
+	  //exercise1_run();
+	  //exercise2_run();
+	  //exercise3_run();
+	  //if(counter>=10)counter = 0;
+	  //display7SEG(counter++);
+	  //exercise5_run();
+	  exercise10_run();
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -148,29 +165,55 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, a_Pin|b_Pin|c_Pin|d_Pin
+                          |e_Pin|f_Pin|g_Pin|LED_GREEN_Pin
+                          |LED_YELLOW_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, REDB_Pin|LED_RED_Pin|YELLOWB_Pin|GREENB_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : LED_RED_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, led6_Pin|c2_Pin|d2_Pin|e2_Pin
+                          |f2_Pin|g2_Pin|led7_Pin|led8_Pin
+                          |led9_Pin|led10_Pin|led11_Pin|a2_Pin
+                          |b2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : a_Pin b_Pin c_Pin d_Pin
+                           e_Pin f_Pin g_Pin LED_GREEN_Pin
+                           LED_YELLOW_Pin */
+  GPIO_InitStruct.Pin = a_Pin|b_Pin|c_Pin|d_Pin
+                          |e_Pin|f_Pin|g_Pin|LED_GREEN_Pin
+                          |LED_YELLOW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_RED_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LED_YELLOW_Pin */
-  GPIO_InitStruct.Pin = LED_YELLOW_Pin;
+  /*Configure GPIO pins : REDB_Pin LED_RED_Pin YELLOWB_Pin GREENB_Pin */
+  GPIO_InitStruct.Pin = REDB_Pin|LED_RED_Pin|YELLOWB_Pin|GREENB_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_YELLOW_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : led6_Pin c2_Pin d2_Pin e2_Pin
+                           f2_Pin g2_Pin led7_Pin led8_Pin
+                           led9_Pin led10_Pin led11_Pin a2_Pin
+                           b2_Pin */
+  GPIO_InitStruct.Pin = led6_Pin|c2_Pin|d2_Pin|e2_Pin
+                          |f2_Pin|g2_Pin|led7_Pin|led8_Pin
+                          |led9_Pin|led10_Pin|led11_Pin|a2_Pin
+                          |b2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
